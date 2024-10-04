@@ -18,10 +18,10 @@
 회원 간 팔로우 관계를 관리하는 테이블입니다.
 
 ## 테이블 간의 관계 (Foreign Key 설정)
-SSAFIT_Bookmarks.user_id_no는 SSAFIT_Users.user_id_no를 참조
-SSAFIT_Bookmarks.video_id는 Videos.video_id를 참조
-Reviews.user_id_no는 SSAFIT_Users.user_id_no를 참조
-Reviews.video_id는 Videos.video_id를 참조
-SSAFIT_Follows.follower_user_id는 SSAFIT_Users.user_id_no를 참조
-SSAFIT_Follows.following_user_id는 SSAFIT_Users.user_id_no를 참조
+- SSAFIT_Bookmarks.user_id_no는 SSAFIT_Users.user_id_no를 참조
+- SSAFIT_Bookmarks.video_id는 Videos.video_id를 참조
+- Reviews.user_id_no는 SSAFIT_Users.user_id_no를 참조
+- Reviews.video_id는 Videos.video_id를 참조
+- SSAFIT_Follows.follower_user_id는 SSAFIT_Users.user_id_no를 참조
+- SSAFIT_Follows.following_user_id는 SSAFIT_Users.user_id_no를 참조
 
