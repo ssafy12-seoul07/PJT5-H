@@ -37,6 +37,8 @@ SSAFIT_DB 관통 프로젝트에 기여한 내용 요약 및 배운 점을 기�
      - `user_id`는 고유한 값이 되어야 하며, 중복된 ID를 허용하지 않음 (`UNIQUE KEY`)
      - 비밀번호는 최대 255자까지 저장 가능하며, 보안을 위해 충분한 길이를 허용함
      - `user_date` 필드는 사용자의 가입 날짜를 기록하며, 기본값으로 NULL이 설정될 수 있음
+     
+     ![ssafit_users.png](./img/ssafit_users.png)
 
     ### 2) **SSAFIT_Follows**
 
@@ -51,6 +53,10 @@ SSAFIT_DB 관통 프로젝트에 기여한 내용 요약 및 배운 점을 기�
      - `follower_user_id`와 `following_user_id`는 각각 `ssafit_users` 테이블의 `user_id_no`를 참조하며, 외래 키 제약 조건이 적용됨
      - `ON DELETE CASCADE` 옵션으로, 해당 사용자가 삭제되면 관련된 팔로우 관계도 자동으로 삭제됨
      - `follower_user_id`와 `following_user_id`에 인덱스가 설정되어 있어, 빠른 조회가 가능함
+
+     ![ssafit_follows.png](./img/ssafit_follows.png)
+     ![ssafit_follows2.png](./img/ssafit_follows2.png)
+
 
     ### 3) **SSAFIT_Bookmarks**
 
@@ -67,6 +73,9 @@ SSAFIT_DB 관통 프로젝트에 기여한 내용 요약 및 배운 점을 기�
      - `video_id`는 `ssafit_videos` 테이블의 `video_id` 필드를 참조하며, 외래 키 제약 조건이 적용됨.
      - `bookmark_date` 필드는 사용자가 비디오를 북마크한 날짜를 기록하며, 기본값으로 NULL이 설정될 수 있음.
      - `user_id_no`와 `video_id` 필드에는 각각 인덱스가 설정되어, 검색 속도를 향상시킴.
+
+     ![ssafit_bookmarks.png](./img/ssafit_bookmarks.png)
+     ![ssafit_bookmarks2.png](./img/ssafit_bookmarks2.png)
 
 ## 5. 프로젝트를 통해 배운 점 / 느낀 점
  - 팀원들과 Database 설계하는 과정을 통해 데이터베이스 설계의 중요성을 배우게 되었습니다. 정규화와 비정규화 과정을 자세히 공부할 수 있는 기회가 되었고, 시스템 성능을 고려하여 설계하는 것이 매우 중요하다는 것을 깨달았습니다. 
