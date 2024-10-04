@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS SSAFIT;
 
 USE SSAFIT;
 
-CREATE TABLE `SSAFIT_Videos` (
+CREATE TABLE IF NOT EXISTS `SSAFIT_Videos` (
   `video_id` INTEGER PRIMARY KEY,
   `title` VARCHAR(255) NOT NULL,
   `description` TEXT,
@@ -13,7 +13,7 @@ CREATE TABLE `SSAFIT_Videos` (
   `created_at` TIMESTAMP
 );
 
-CREATE TABLE `SSAFIT_Bookmarks` (
+CREATE TABLE IF NOT EXISTS `SSAFIT_Bookmarks` (
   `bookmark_id` INTEGER PRIMARY KEY AUTO_INCREMENT,
   `user_id_no` INTEGER NOT NULL,
   `video_id` INTEGER NOT NULL,
@@ -47,14 +47,14 @@ CREATE TABLE `SSAFIT_Follows` (
   `follow_date` TIMESTAMP
 );
 
-ALTER TABLE `SSAFIT_Follows` ADD FOREIGN KEY (`follower_user_id`) REFERENCES `SSAFIT_Users` (`user_id_no`);
+ALTER TABLE `SSAFIT_Follows` ADD FOREIGN KEY (`follower_user_id`) REFERENCES `SSAFIT_Users` (`user_id_no`) ON DELETE CASCADE;
 
-ALTER TABLE `SSAFIT_Follows` ADD FOREIGN KEY (`following_user_id`) REFERENCES `SSAFIT_Users` (`user_id_no`);
+ALTER TABLE `SSAFIT_Follows` ADD FOREIGN KEY (`following_user_id`) REFERENCES `SSAFIT_Users` (`user_id_no`) ON DELETE CASCADE;
 
-ALTER TABLE `SSAFIT_Bookmarks` ADD FOREIGN KEY (`user_id_no`) REFERENCES `SSAFIT_Users` (`user_id_no`);
+ALTER TABLE `SSAFIT_Bookmarks` ADD FOREIGN KEY (`user_id_no`) REFERENCES `SSAFIT_Users` (`user_id_no`) ON DELETE CASCADE;
 
-ALTER TABLE `SSAFIT_Bookmarks` ADD FOREIGN KEY (`video_id`) REFERENCES `SSAFIT_Videos` (`video_id`);
+ALTER TABLE `SSAFIT_Bookmarks` ADD FOREIGN KEY (`video_id`) REFERENCES `SSAFIT_Videos` (`video_id`) ON DELETE CASCADE;
 
-ALTER TABLE `SSAFIT_Reviews` ADD FOREIGN KEY (`user_id_no`) REFERENCES `SSAFIT_Users` (`user_id_no`);
+ALTER TABLE `SSAFIT_Reviews` ADD FOREIGN KEY (`user_id_no`) REFERENCES `SSAFIT_Users` (`user_id_no`) ON DELETE CASCADE;
 
-ALTER TABLE `SSAFIT_Reviews` ADD FOREIGN KEY (`video_id`) REFERENCES `SSAFIT_Videos` (`video_id`);
+ALTER TABLE `SSAFIT_Reviews` ADD FOREIGN KEY (`video_id`) REFERENCES `SSAFIT_Videos` (`video_id`) ON DELETE CASCADE;
