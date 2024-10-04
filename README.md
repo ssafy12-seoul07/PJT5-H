@@ -3,7 +3,7 @@
 ## Database Table 설계
 
 ![ex_screenshot](./SSAFIT/ERD.png)
-![ex_screenshot](./SSAFIT/MySQL_ERD.png)
+![ex_screenshot](./SSAFIT/MySQL_ERD.PNG)
 
 ### 1. SSAFIT_Videos 테이블 (운동 영상 정보)
 운동 영상 정보를 저장하는 테이블입니다.
