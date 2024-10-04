@@ -1,4 +1,4 @@
-# SSAFIT Project - Database Design
+# SSAFIT Project
 
 ## Database Table 설계
 
